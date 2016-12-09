@@ -1,0 +1,33 @@
+{
+  "name": "mqtt-notification",
+  "version": "0.0.0",
+  "description": "Native desktop notifications based on MQTT.",
+  "main": "receiver.js",
+  "scripts": {
+    "start": "node receiver.js",
+    "test": "standard"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/svrooij/node-mqtt-notification.git"
+  },
+  "keywords": [
+    "mqtt",
+    "notifications",
+    "desktop"
+  ],
+  "author": "Stephan van Rooij <github@svrooij.nl> (https://svrooij.nl)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/svrooij/node-mqtt-notification/issues"
+  },
+  "homepage": "https://github.com/svrooij/node-mqtt-notification#readme",
+  "devDependencies": {
+    "standard": "^8.6.0"
+  },
+  "dependencies": {
+    "config": "^1.24.0",
+    "mqtt": "^2.1.3",
+    "node-notifier": "^4.6.1"
+  }
+}

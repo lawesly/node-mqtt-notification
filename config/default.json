@@ -1,0 +1,19 @@
+{
+  "mqtt": {
+    "host":null,
+    "user":null,
+    "password":null,
+    "secure":false
+  },
+  "topics": {
+    "lockTopic":null, // If you want your computer to lock when receiving a message on this topic.
+    "notificationTopic":null // The topic you want to receive the notifications on.
+  },
+  "notificationDefaults": {
+    "sound": false, // Do you want every notification to play a sound.
+    "title": "MQTT-Notification",
+    "iconFolder": "img",
+    "icon":"logo_64.png",
+    "lockIcon":"lock_64.png"
+  }
+}
