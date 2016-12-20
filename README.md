@@ -17,8 +17,8 @@ You can also use this to remote lock your computer. (Currently only tested on Ma
 You would typically run this app in the background, but first you have to configure it.
 
 ```bash
-git clone https://github.com/svrooij/evohome2mqtt.git
-cd evohome2mqtt
+git clone https://github.com/svrooij/node-mqtt-notification.git
+cd node-mqtt-notification
 npm install
 nano config/local.json
 ```
