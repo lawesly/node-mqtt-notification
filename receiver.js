@@ -2,10 +2,12 @@ const config = require('config')
 const path = require('path')
 const notifier = require('node-notifier') // Sending the notifications
 
+console.log('Running node-mqtt-notification from %s', process.argv[1])
+
 /* ------- Config part ----- */
 var mqttConf = config.get('mqtt')
 if (!mqttConf.host) {
-  console.error('Set at least the mqtt host!')
+  console.error('Set at least the mqtt host! Read https://github.com/svrooij/node-mqtt-notification for more info.')
   process.exit(4)
 }
 var mqttOptions = {}
@@ -26,11 +28,14 @@ var notificationConfig = config.get('notificationDefaults')
 const mqtt = require('mqtt')
 const client = mqtt.connect(mqttConf.host, mqttOptions)
 client.on('connect', () => {
+  console.log('Connected to MQTT at %s', mqttConf.host)
   if (topicConfig.lockTopic) {
     client.subscribe(topicConfig.lockTopic)
+    console.log('Subscribing to %s', topicConfig.lockTopic)
   }
   if (topicConfig.notificationTopic) {
     client.subscribe(topicConfig.notificationTopic)
+    console.log('Subscribing to %s', topicConfig.notificationTopic)
   }
 })
 
@@ -74,6 +79,7 @@ function handleNotification (topic, message) {
   }
 
   notifier.notify(notification)
+  console.log('Notification received %s', JSON.stringify(notification))
 }
 
 function tryParseJSON (jsonString) {

@@ -1,8 +1,8 @@
 {
   "name": "mqtt-notification",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Native desktop notifications based on MQTT.",
-  "main": "receiver.js",
+  "main": "node receiver.js",
   "scripts": {
     "start": "node receiver.js",
     "test": "standard"
